@@ -28,4 +28,7 @@ console.log(h1.innerText);
 console.log(firstParagraph.innerText);
 console.log(firstParagraph.innerHTML);
 
+// will not return '<h1> Silky Chickens <\h1>', but 'Silky Chickens';
+console.log(h1.innerHTML);
+
 firstParagraph.innerHTML = firstParagraph.innerHTML + '<b> I was created in JS!';
