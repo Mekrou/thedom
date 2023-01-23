@@ -27,3 +27,5 @@ console.log(h1.innerText);
 // inner text vs inner html
 console.log(firstParagraph.innerText);
 console.log(firstParagraph.innerHTML);
+
+firstParagraph.innerHTML = firstParagraph.innerHTML + '<b> I was created in JS!';
