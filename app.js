@@ -19,4 +19,11 @@ const images = document.getElementsByTagName('img');
 // }
 
 const firstParagraph = document.querySelector('p');
-firstParagraph.innerText = 'lolololol'; 
+// firstParagraph.innerText = 'lolololol'; 
+
+const h1 = document.querySelector('h1');
+console.log(h1.innerText);
+
+// inner text vs inner html
+console.log(firstParagraph.innerText);
+console.log(firstParagraph.innerHTML);
