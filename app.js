@@ -40,3 +40,5 @@ firstParagraph.innerHTML += '<b> I was created in JS!';
 const firstLink = document.querySelector('a');
 console.log(firstLink.href);
 console.log(firstLink.getAttribute('href'));
+
+firstLink.setAttribute('href', 'https://www.google.com');
