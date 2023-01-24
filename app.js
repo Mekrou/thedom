@@ -31,4 +31,12 @@ console.log(firstParagraph.innerHTML);
 // will not return '<h1> Silky Chickens <\h1>', but 'Silky Chickens';
 console.log(h1.innerHTML);
 
-firstParagraph.innerHTML = firstParagraph.innerHTML + '<b> I was created in JS!';
+firstParagraph.innerHTML += '<b> I was created in JS!';
+
+// Selecting & Manipulating element's attributes
+// const image = document.querySelector('#banner');
+// image.src = "www.thisdoesntexist.com";
+
+const firstLink = document.querySelector('a');
+console.log(firstLink.href);
+console.log(firstLink.getAttribute('href'));
