@@ -42,3 +42,17 @@ console.log(firstLink.href);
 console.log(firstLink.getAttribute('href'));
 
 firstLink.setAttribute('href', 'https://www.google.com');
+
+const everyAnchorTag = document.querySelectorAll('a');
+
+for (let link of everyAnchorTag) {
+    link.style.color = "red";
+    link.style.textDecorationStyle = 'wavy';
+}
+
+// Let's use the window.getComputedStyle() method to change our all our link text to be the same size of the h1.
+const h1fontSize = window.getComputedStyle(h1).fontSize;
+
+for (let link of everyAnchorTag) {
+    link.style.fontSize = h1fontSize;
+}
