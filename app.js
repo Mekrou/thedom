@@ -66,3 +66,19 @@ h2.classList.contains('border');
 h2.classList.toggle('border');
 h2.classList.toggle('highlight');
 // highlight class does not exist; it is added to h2's classList
+
+// Every element has one and only one parent, but can have multiple children
+
+console.log(h2.parentElement);
+
+// Children return an HTMLCollection lists of an element's children
+console.log(h2.children);
+
+console.log(h2.nextSibling);
+// returns the element or node (#text if whitespace or a return character)
+// after the element.
+
+console.log(h2.nextElementSibling);
+// returns the next element after the element.
+
+// These also have previousSibling and previousElementSibling counterparts.
