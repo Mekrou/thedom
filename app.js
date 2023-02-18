@@ -60,3 +60,9 @@ for (let link of everyAnchorTag) {
 const h2 = document.querySelector('h2');
 
 h2.classList.add('border');
+
+h2.classList.contains('border');
+
+h2.classList.toggle('border');
+h2.classList.toggle('highlight');
+// highlight class does not exist; it is added to h2's classList
