@@ -56,3 +56,7 @@ const h1fontSize = window.getComputedStyle(h1).fontSize;
 for (let link of everyAnchorTag) {
     link.style.fontSize = h1fontSize;
 }
+
+const h2 = document.querySelector('h2');
+
+h2.classList.add('border');
