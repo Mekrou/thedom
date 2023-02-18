@@ -82,3 +82,11 @@ console.log(h2.nextElementSibling);
 // returns the next element after the element.
 
 // These also have previousSibling and previousElementSibling counterparts.
+
+// Creating and Appending Elements
+
+const img = document.createElement('img');
+img.src = 'https://images.unsplash.com/photo-1604917018135-18fe420b2ce4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
+
+document.body.appendChild(img);
+img.setAttribute('class', 'square');
