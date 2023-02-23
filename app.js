@@ -90,3 +90,8 @@ img.src = 'https://images.unsplash.com/photo-1604917018135-18fe420b2ce4?ixlib=rb
 
 document.body.appendChild(img);
 img.setAttribute('class', 'square');
+
+const historyHeading = document.querySelector('#History');
+historyHeading.append(' of the Silky Chicken');
+
+firstParagraph.prepend('(A/Any article works here - Steritz) ');
