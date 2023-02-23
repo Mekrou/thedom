@@ -103,3 +103,5 @@ h1.insertAdjacentElement('afterend', myEl);
 
 // Does the exact same thing as the above, but obviously less flexible!
 // h1.after(myEl);
+// there's also
+// h1.before(element);
