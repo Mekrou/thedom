@@ -100,3 +100,6 @@ firstParagraph.prepend('(A/Any article works here - Steritz) ');
 const myEl = document.createElement('myEl')
 myEl.innerText = 'Between first h1 and chicken IMG!'
 h1.insertAdjacentElement('afterend', myEl);
+
+// Does the exact same thing as the above, but obviously less flexible!
+// h1.after(myEl);
