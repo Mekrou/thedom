@@ -105,3 +105,8 @@ h1.insertAdjacentElement('afterend', myEl);
 // h1.after(myEl);
 // there's also
 // h1.before(element);
+
+// Removing Elements
+
+myEl.parentElement.removeChild(myEl);
+// myEl.remove();
