@@ -95,3 +95,8 @@ const historyHeading = document.querySelector('#History');
 historyHeading.append(' of the Silky Chicken');
 
 firstParagraph.prepend('(A/Any article works here - Steritz) ');
+
+// insertAdjacentElement()
+const myEl = document.createElement('myEl')
+myEl.innerText = 'Between first h1 and chicken IMG!'
+h1.insertAdjacentElement('afterend', myEl);
