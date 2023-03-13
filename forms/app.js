@@ -15,3 +15,18 @@ form.addEventListener('submit', function (e) {
     // clear form
     input.value = "";
 })
+
+// Change Event Demonstration:
+
+const change_input = document.querySelector('#input');
+const changeHeader = document.querySelector('#change');
+
+change_input.addEventListener('change', function (e) {
+    console.log('change event ran!');
+    console.log(e);
+    changeHeader.innerText = e.target.value;
+})
+
+change_input.addEventListener('input', function (e) {
+    changeHeader.innerText = e.data;
+})
