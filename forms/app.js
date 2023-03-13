@@ -28,5 +28,6 @@ change_input.addEventListener('change', function (e) {
 })
 
 change_input.addEventListener('input', function (e) {
+    console.log(e);
     changeHeader.innerText = e.data;
 })

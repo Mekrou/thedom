@@ -28,6 +28,13 @@
         <button>Submit</button>
     </form>
 
+    <h2>Event Bubbling</h2>
+    <section onclick="alert('section clicked')">
+        <p onclick="alert('paragraph clicked!')">
+            <button onclick="alert('button clicked!')"></button>
+        </p>
+    </section>
+
     <script src="app.js"></script>
 </body>
 </html>
