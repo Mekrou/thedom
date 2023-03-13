@@ -3,7 +3,7 @@ const scoreSelector = document.querySelector("#score-select");
 scoreSelector.addEventListener('change', function (e) {
     winScore = e.target.value;
     console.log(e);
-    // TODO: Reset score when winScore is changed.
+    reset();
 });
 
 // Define winning condition & player scores.
@@ -32,10 +32,30 @@ function win(score) {
         return false;
 }
 
+// whenever a player wins, update scoreboard & disable buttons.
+function updateForWin(player) {
+    if (player === 1)
+    {
+        scoreboard.innerHTML = "Player 1 WINS!"
+    } else if (player === 2) {
+        scoreboard.innerHTML = "Player 2 WINS!"
+    }
+    
+    // disable score change
+    p1Button.disabled = true;
+    p2Button.disabled = true;
+}
+
 // reset p1 and p2 score to 0, then update the board to show the change.
 function reset() {
     p1Score = 0;
     p2Score = 0;
+
+    //re-enable buttons
+    p1Button.disabled = false;
+    p2Button.disabled = false;
+
+    
     updateScore();
 }
 
@@ -43,14 +63,24 @@ function reset() {
 p1Button.addEventListener('click', function (e) {
     p1Score += 1;
 
-    if (win(p1Score)) console.log("Player 1 WINS!");
+    if (win(p1Score)) {
+        updateForWin(1);
+        
+        // prevent scoreboard from being over-ridden in line 73
+        return
+    }
 
     updateScore();
 });
 p2Button.addEventListener('click', function (e) {
     p2Score +=1;
 
-    if (win(p2Score)) console.log("Player 2 WINS!");
+    if (win(p2Score)) {
+        updateForWin(2);
+        
+        //prevent scoreboard from being over-ridden. in like 82
+        return
+    }
 
     updateScore();
 });
