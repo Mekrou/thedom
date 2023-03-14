@@ -1,7 +1,7 @@
 // To get the selected win condition.
 const scoreSelector = document.querySelector("#score-select");
 scoreSelector.addEventListener('change', function (e) {
-    winScore = e.target.value;
+    winScore = parseInt(this.value);
     console.log(e);
     reset();
 });
@@ -14,6 +14,8 @@ let p2Score = 0;
 // References
 const p1Button = document.querySelector("#p1-score");
 const p2Button = document.querySelector("#p2-score");
+const p1Display = document.querySelector('#p1Score');
+const p2Display = document.querySelector('#p2Score');
 const scoreboard = document.querySelector('#scoreboard');
 const resetButton = document.querySelector('#reset');
 
@@ -21,7 +23,8 @@ const resetButton = document.querySelector('#reset');
 
 // updates scoreboard h1 to represent new player scores.
 function updateScore() {
-    scoreboard.innerHTML = `${p1Score} to ${p2Score}`;
+    p1Display.innerHTML = p1Score;
+    p2Display.innerHTML = p2Score;
 }
 
 // checks if a player has reached the winScore
@@ -36,9 +39,11 @@ function win(score) {
 function updateForWin(player) {
     if (player === 1)
     {
-        scoreboard.innerHTML = "Player 1 WINS!"
+        p1Display.classList.add('winner');
+        p2Display.classList.add('loser');
     } else if (player === 2) {
-        scoreboard.innerHTML = "Player 2 WINS!"
+        p2Display.classList.add('winner');
+        p1Display.classList.add('loser');
     }
     
     // disable score change
@@ -51,6 +56,10 @@ function reset() {
     p1Score = 0;
     p2Score = 0;
 
+    //reset display
+    p1Display.classList.remove(p1Display.classList.value)
+    p2Display.classList.remove(p2Display.classList.value)
+
     //re-enable buttons
     p1Button.disabled = false;
     p2Button.disabled = false;
@@ -62,27 +71,17 @@ function reset() {
 // Behavior
 p1Button.addEventListener('click', function (e) {
     p1Score += 1;
-
+    updateScore();
     if (win(p1Score)) {
         updateForWin(1);
-        
-        // prevent scoreboard from being over-ridden in line 73
-        return
     }
-
-    updateScore();
 });
 p2Button.addEventListener('click', function (e) {
     p2Score +=1;
-
+    updateScore();
     if (win(p2Score)) {
         updateForWin(2);
-        
-        //prevent scoreboard from being over-ridden. in like 82
-        return
     }
-
-    updateScore();
 });
 
 resetButton.addEventListener('click', () => reset());
