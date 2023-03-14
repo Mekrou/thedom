@@ -4,33 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="app.css" />
+    <link rel="stylesheet" type="text/css" href="app.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <title>Score Keeper</title>
     
 </head>
 <body>
-    <h1 id="scoreboard">
-        <span id="p1Score">0</span>
-        to
-        <span id="p2Score">0</span>
-    </h1>
-    <div>Use the buttons to keep score</div>
-    <div>Playing to: 
-        <select name="winScore" id="score-select">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-        </select>
-    </div>
+    <section class="section">
+        <div class="columns">
 
-    <div>
-        <button id="p1-score">+1 Player One</button>
-        <button id="p2-score">+1 Player Two</button>
-        <button id="reset">Reset</button>
-    </div>
+            <div class="column is-half is-offset-one-quarter">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="media-content">
+                            <p class="title is-2 is-spaced">
+                                <span id="p1Score">0</span>
+                                to
+                                <span id="p2Score">0</span>
+                            </p>
+                            <p class="subtitle is-4">Use the buttons to keep score</p>
+                        </div>
+                        
+                        <div class="content">
+                            <label for="winScore">Playing to: </label>
+                            <div class="select is-rounded is-small">
+                                <select name="winScore" id="score-select">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                            </div>
+                        </div>
+                    <div class="card-footer">
+                        <div>
+                            <button id="p1-score" class="button is-primary">+1 Player One</button>
+                            <button id="p2-score" class="button is-info">+1 Player Two</button>
+                            <button id="reset" class="button is-danger">Reset</button>
+                        </div>
+                    </div>        
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
 
     <script src="app.js"></script>
 </body>

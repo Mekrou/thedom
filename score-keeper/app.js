@@ -23,8 +23,8 @@ const resetButton = document.querySelector('#reset');
 
 // updates scoreboard h1 to represent new player scores.
 function updateScore() {
-    p1Display.innerHTML = p1Score;
-    p2Display.innerHTML = p2Score;
+    p1Display.innerText = p1Score;
+    p2Display.innerText = p2Score;
 }
 
 // checks if a player has reached the winScore
@@ -57,8 +57,8 @@ function reset() {
     p2Score = 0;
 
     //reset display
-    p1Display.classList.remove(p1Display.classList.value)
-    p2Display.classList.remove(p2Display.classList.value)
+    p1Display.classList.remove('winner', 'loser')
+    p2Display.classList.remove('winner', 'loser')
 
     //re-enable buttons
     p1Button.disabled = false;
